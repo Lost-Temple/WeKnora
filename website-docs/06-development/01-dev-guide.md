@@ -2,6 +2,49 @@
 
 开发环境使用 `docker-compose.dev.yml` 启动依赖服务，并支持独立运行 Go 后端、Web 前端和 docreader。代码修改后按所在模块执行构建与测试，再检查相关集成路径。
 
+## 代码阅读指南
+
+如果你是在做二次开发，想先把代码读顺，建议配合下面几篇文档一起看：
+
+- [代码阅读指南总览](06-code-reading-overview.md)
+- [前端知识库模块阅读指南](07-code-reading-frontend-knowledge.md)
+- [后端认证与租户链路阅读指南](08-code-reading-backend-auth-tenant.md)
+- [后端知识库与 Wiki 链路阅读指南](09-code-reading-backend-knowledge-wiki.md)
+- [检索与数据源同步阅读指南](10-code-reading-search-datasource.md)
+- [会话问答、引用与时间线阅读指南](11-code-reading-session-rag-references.md)
+- [Agent 会话、Artifact 与续播阅读指南](12-code-reading-agent-artifacts-continue-stream.md)
+- [Artifact 下载、删除与产物库阅读指南](13-code-reading-artifact-library-delete.md)
+- [会话 Fork、Rewind 与分叉状态阅读指南](14-code-reading-session-fork-rewind.md)
+- [聊天会话状态、Steer、Stop 与 Resume 阅读指南](15-code-reading-chat-session-steer-stop-resume.md)
+- [后端 Session Stream、Continue-Stream 与 Complete 阅读指南](16-code-reading-backend-session-stream.md)
+- [会话 QA 入口、配置型技能引导与安装时间线阅读指南](17-code-reading-session-qa-skill-guidance.md)
+- [技能安装 Transcript、Guidance 与 Repair Round 阅读指南](18-code-reading-skill-install-transcript-guidance.md)
+- [技能安装/删除进度流与状态迁移阅读指南](19-code-reading-skill-progress-state-transitions.md)
+- [技能安装 Stop、Stuck-Run Reaper 与恢复路径阅读指南](20-code-reading-skill-stop-reaper-recovery.md)
+- [技能 Snapshot Ledger、Prune 与 Reconcile 阅读指南](21-code-reading-skill-snapshot-ledger-prune-reconcile.md)
+- [技能 Snapshot Commit 与 Pointer Switch 阅读指南](22-code-reading-skill-snapshot-commit-pointer-switch.md)
+- [技能 SkillImage、Effective Config 与 Session 启动阅读指南](23-code-reading-skill-image-effective-config-session.md)
+- [技能 Manifest、环境变量声明与运行时注入阅读指南](24-code-reading-skill-manifest-env-runtime-injection.md)
+- [技能 Source、Host Staging 与 Prompt 注入阅读指南](25-code-reading-skill-source-host-staging-prompt.md)
+- [技能来源解析、远程获取与安全校验阅读指南](26-code-reading-skill-source-fetch-parse.md)
+- [技能 Bundle 解析、文件裁剪与校验闸门阅读指南](27-code-reading-skill-bundle-parse-guardrails.md)
+- [技能 Served Version、Catalog Archive 复用与 Ready 切换阅读指南](28-code-reading-skill-served-version-catalog-reuse.md)
+- [技能 Remove、Served 回落与 Archive 回收阅读指南](29-code-reading-skill-remove-archive-release.md)
+- [技能文件浏览、Catalog 文件查看与 `skill://` 读取阅读指南](30-code-reading-skill-file-browser-and-skill-read.md)
+- [Host Skill 本地版本树、Activate 与 Sweep 阅读指南](31-code-reading-host-skill-version-tree.md)
+- [技能 Install Verify、Runtime Verify 与 Repair Round 阅读指南](32-code-reading-skill-install-verify-runtime-gates.md)
+- [技能 Install Transcript、Progress 与阶段时序阅读指南](33-code-reading-skill-install-transcript-progress-timeline.md)
+- [技能 Install Shell、Tool 白名单与 Skill File Tools 阅读指南](34-code-reading-skill-install-tool-boundaries.md)
+- [技能安装 Guidance、Steer 与 Repair Round 边界阅读指南](35-code-reading-skill-install-guidance-steer-repair-boundaries.md)
+- [技能安装 Lifecycle、Run Lock、Heartbeat 与终态落盘阅读指南](36-code-reading-skill-install-lifecycle-lock-heartbeat-ready.md)
+- [技能安装 Sandbox Bootstrap、目录重置与文件种子阅读指南](37-code-reading-skill-install-sandbox-bootstrap-seeding.md)
+- [问答引用原文定位阅读指南](38-code-reading-chat-reference-source-location.md)
+- [Source Locator 生成、重映射与补强阅读指南](39-code-reading-source-locator-generation-remap.md)
+- [Locator 失效、编辑继承与检索合并边界阅读指南](40-code-reading-locator-stale-edit-merge-boundaries.md)
+- [回答引用清单组装与传递阅读指南](41-code-reading-chat-reference-list-pipeline.md)
+
+这些文档和源码内的中文注释是配套的：阅读指南负责给出阅读顺序和模块边界，源码注释负责解释关键实现点。
+
 ## 技术栈与环境要求 {#_1-技术栈与环境要求}
 
 WeKnora 由三个可独立开发的进程组成：
